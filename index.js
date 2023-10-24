@@ -1,1 +1,3 @@
-console.log("froggy froggy frog");
+const start = require("./contacts");
+
+start.go();
