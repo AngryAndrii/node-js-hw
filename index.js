@@ -17,13 +17,13 @@ const invokeAction = async ({ action, id, name, email, phone }) => {
   }
 };
 
-// invokeAction({
-//   action: "add",
-//   name: "Frog",
-//   email: "froggy@mail.com",
-//   phone: "1231233",
-// });
+invokeAction({
+  action: "add",
+  name: "Bobby boo",
+  email: "forel@mail.com",
+  phone: "55525225",
+});
 
 // invokeAction({ action: "remove", id: "ppp" });
 
-invokeAction({ action: "list" });
+// invokeAction({ action: "list" });

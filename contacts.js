@@ -13,6 +13,10 @@ async function readContacts() {
   }
 }
 
+async function writeContacts(contacts) {
+  await fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
+}
+
 async function listContacts() {
   return await readContacts();
 }
@@ -39,7 +43,7 @@ async function addContact(name, email, phone) {
     phone,
   };
   contacts.push(newContact);
-  await fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
+  await writeContacts(contacts);
   return newContact;
 }
 
@@ -52,7 +56,7 @@ async function removeContact(id) {
   }
 
   const [result] = contacts.splice(index, 1);
-  await fs.writeFile(contactsPath, JSON.stringify(contacts, undefined, 2));
+  await writeContacts(contacts);
   return result;
 }
 
