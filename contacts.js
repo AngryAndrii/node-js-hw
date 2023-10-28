@@ -26,6 +26,7 @@ async function getContactById(contactId) {
     const contacts = await listContacts();
     const result = contacts.find((item) => item.id === contactId);
     if (!result) {
+      console.log("index is invalid, please check the input index!");
       return null;
     }
     return result;
